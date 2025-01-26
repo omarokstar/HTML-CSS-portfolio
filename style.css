@@ -1,0 +1,360 @@
+/* Reset and Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: #eaf6ff;
+  color: #333;
+  overflow: hidden;
+}
+
+/* Navbar Styles */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  background-color: #004a77;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  background: #007bbd;
+  color: #fff;
+  border-color: #005f91;
+}
+
+/* Layout Styles */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* Side Panels */
+.Left-section, .right-section {
+  background: #007bbd;
+  color: white;
+  padding: 20px;
+  width: 250px;
+  height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Left-section h2, .right-section h2 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.Left-section p, .right-section p {
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+
+.content-section {
+  height: 80vh; 
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; 
+  scrollbar-width: thin; 
+  scrollbar-color: #007bbd #f0f0f0;
+}
+/* Card Container */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Card Styles */
+.card {
+  background: #004a77;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 250px; /* Adjust width for smaller size */
+  height: 350px; /* Adjust height for balance */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 270px;
+  height: 370px;
+}
+
+.imgBx {
+  width: 100%;
+  height: 200px; 
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.png {
+  width: 75%;
+  height: 75%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imgBx img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .imgBx img {
+  transform: scale(1.1);
+}
+
+.contentBx {
+  padding: 15px;
+  color: white;
+}
+
+.contentBx h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.contentBx span {
+  color: #d1e7ff;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+  .card {
+    width: 220px;
+    height: 330px;
+  }
+
+  .card:hover {
+    width: 240px;
+    height: 350px;
+  }
+}
+
+/* Small screens (mobile devices) */
+@media (max-width: 480px) {
+  .card-container {
+    padding: 10px;
+  }
+
+  .card {
+    width: 180px;
+    height: 280px;
+  }
+
+  .card:hover {
+    width: 200px;
+    height: 300px;
+  }
+}
+.feedback-input {
+  color:rgb(0, 0, 0);
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #00bbd6;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border:2px solid #CC4949; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+[type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:#007bbd;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:#06354e; }
+
+.skills {
+    text-align: right; 
+    padding-top: 10px; 
+  padding-bottom: 10px; 
+  color: white; 
+}
+
+.html {width: 90%; background-color: #04AA6D;} 
+.js {width: 90%; background-color: #04AA6D} 
+.css {width: 80%; background-color: #910000;} 
+
+
+.slider-container {
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slider {
+  display: flex;
+  width: 400%;
+  animation: slide 15s infinite;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0% {
+      transform: translateX(0);
+  }
+  25% {
+      transform: translateX(-100%);
+  }
+  50% {
+      transform: translateX(-200%);
+  }
+  75% {
+      transform: translateX(-300%);
+  }
+  100% {
+      transform: translateX(0);
+  }}  
+  loader{
+    -webkit-perspective:700px;
+    perspective: 700px;
+  }
+  
+  .loader>span{
+    font-size: 130px;
+    font-family: "franklin gothic medium",sans-serif;
+    display: inline-block;
+    animation:flip 2.6s infinite linear;
+    transform-origin:0 70%;
+    transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+  }
+  
+  @keyframes flip{
+    35%{
+      transform: rotateX(360deg);
+    }
+    100%{
+      transform: rotatex(360deg);
+    }
+  }
+  
+  
+  .loader>span:nth-child(even){
+    color:white;
+  
+  }
+  
+  .loader>span:nth-child(2){
+    animation-delay: 0.3s;
+  }
+  
+  .loader>span:nth-child(3){
+    animation-delay: 0.6s;
+  }
+  
+  .loader>span:nth-child(4){
+    animation-delay: 0.9s;
+  }
+  
+  .loader>span:nth-child(5){
+    animation-delay: 1.2s;
+  }
+  
+  .loader>span:nth-child(6){
+    animation-delay: 1.5s
+  }
+  
+  .loader>span:nth-child(7){
+    animation-delay: 1.8s
+  }
